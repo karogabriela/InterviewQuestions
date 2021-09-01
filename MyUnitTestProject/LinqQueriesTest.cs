@@ -11,20 +11,12 @@ namespace MyUnitTestProject
     public class LinqQueriesTest
     {
         LinqQueries linqQueries;
-        int[] dataNumber1;
-        int[] dataNumber2;
-        string[] newLines;
-        List<string> myStringList;
 
 
         [TestInitialize]
         public void TestInitialize()
         {
             linqQueries = new LinqQueries();
-            dataNumber1 = new [] { 1, 2, 3, 4, 5 };
-            dataNumber2 = new [] { 2, 4, 6, 8, 10 };
-            newLines = new string[] { "First line", "Second line", "Third line" };
-            myStringList = new List<string>();
         }
 
         /// <summary>
@@ -33,7 +25,10 @@ namespace MyUnitTestProject
         [TestMethod]
         public void GetResultFromMultiply2ArraysTest()
         {
+            int[] dataNumber1 = new[] { 1, 2, 3, 4, 5 };
+            int[] dataNumber2 = new[] { 2, 4, 6, 8, 10 };
             int[] arrayExpected = { 4, 16 };
+
             var results = linqQueries.GetResultFromMultiply2Arrays(dataNumber1, dataNumber2);
 
             results.Should().Contain(n => n == arrayExpected[0]);
@@ -67,8 +62,7 @@ namespace MyUnitTestProject
 
             List<string> results = linqQueries.GetResultWithReverse(data1, data2);
 
-            results.Should().BeEquivalentTo(arrayExpected);
-            results.Should().HaveCount(4);
+            results.Should().BeEquivalentTo(arrayExpected).And.HaveCount(4);
         }
 
         [TestMethod]
@@ -89,6 +83,26 @@ namespace MyUnitTestProject
             results[0].Count().Should().Be(3);
             results[1].Last().Should().BeEquivalentTo(new Car { Brand = "A", Color = "Red" });
             results[2].Last().Should().BeEquivalentTo(new Car { Brand = "C", Color = "Green" });
+        }
+
+        [TestMethod]
+        public void OrderedNameListTest()
+        {
+            Person[] people = new Person[] { new Person { Id= 1, Name= "Tatiana" },
+                                                    new Person { Id= 1, Name= "Mario" },
+                                                    new Person { Id= 1, Name= "Ana" },
+                                                    new Person { Id= 1, Name= "Cesar" },
+                                                    new Person { Id= 1, Name= "Antonio" },
+                                                    new Person { Id= 1, Name= "Bianca" }};
+
+            List<string> results = linqQueries.GetOrderedNameList(people);
+            results.Should().StartWith("Ana").And.EndWith("Tatiana").And.HaveCount(6);
+        }
+
+        [TestCleanup]
+        public void TestCleanUp()
+        {
+            linqQueries = null;
         }
     }
 }

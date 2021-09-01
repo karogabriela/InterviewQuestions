@@ -64,5 +64,16 @@ namespace InterviewQuestions
 
 			return qry;
 		}
+
+		public List<string> GetOrderedNameList(Person[] people)
+        {
+			List<string> result = new List<string>();
+
+			result = (from person in people
+					 orderby person.Name
+					 select person.Name).ToList();
+
+			return result;
+		}
 	}	
 }
