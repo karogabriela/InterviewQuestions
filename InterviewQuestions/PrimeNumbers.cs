@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterviewQuestions
 {
-    public class PrimeNumbers
+    public sealed class PrimeNumbers
     {
         /// <summary>
         /// Check if a number is prime number

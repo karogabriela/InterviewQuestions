@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterviewQuestions
 {
-    public class UsingArrays
+    public sealed class UsingArrays
     {
         /// <summary>
         /// This function takes an array of integers and returns the number of triplets in the array.

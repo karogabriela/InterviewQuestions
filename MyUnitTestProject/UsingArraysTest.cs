@@ -20,7 +20,7 @@ namespace MyUnitTestProject
             int[] data1 = { 1, 2, 3, 1, 1, 1 };
             int[] data2 = { 1, 1, 1, 1, 1, 1 };
             int[] data3 = { 1, 1, 1, 1, 1, 0 };
-            int result = 0;
+            int result;
 
             result = usingArraysTest.FindTriplets(data1);
             Assert.AreEqual(result, 1);

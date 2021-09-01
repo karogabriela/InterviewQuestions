@@ -76,6 +76,10 @@
       <Project>{fd6d2d1f-7b78-4d50-bcfb-2fa22d5f76ec}</Project>
       <Name>InterviewQuestions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{19ab9341-48f0-4b7a-b165-658e468fa213}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
