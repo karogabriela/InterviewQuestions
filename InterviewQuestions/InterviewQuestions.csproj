@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LambdaExpressions.cs" />
     <Compile Include="UsingArrays.cs" />
     <Compile Include="LinqQueries.cs" />
     <Compile Include="PrimeNumbers.cs" />

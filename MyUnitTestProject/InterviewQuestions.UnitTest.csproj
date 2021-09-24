@@ -62,6 +62,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LambdaExpressionsTest.cs" />
     <Compile Include="LinqQueriesTest.cs" />
     <Compile Include="PrimeNumbersTest.cs" />
     <Compile Include="UsingArraysTest.cs" />
